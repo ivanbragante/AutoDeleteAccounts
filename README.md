@@ -1,62 +1,137 @@
-Descrição do Software de Automação de Análise de Contas
+# Google Account Analysis Automation
 
-Visão Geral
-Este software foi desenvolvido para automatizar a análise de contas do Google, otimizando um processo que, manualmente, levaria um tempo significativamente maior e estaria sujeito a erros humanos. A automação utiliza Python, juntamente com as bibliotecas Selenium e openpyxl, para interagir com o sistema, extrair informações e atualizar uma base de dados em tempo real.
-O objetivo principal é analisar aproximadamente 4 mil contas antes de 2025, garantindo precisão e economia de tempo.
+## Overview
 
-Funcionalidades
+This project was developed to automate the analysis of Google accounts, replacing a manual process that was time-consuming and prone to human error.
 
-Leitura de Base de Dados:
-O software utiliza uma planilha de controle chamada gmails.xlsx, localizada no diretório C:\Analisar.
-A planilha contém os e-mails das contas que precisam ser analisadas.
-Análise Automática de Contas:
-Para cada e-mail, o software realiza login no sistema, onde diversas informações da conta estão disponíveis.
-O HTML da página é analisado para identificar os elementos necessários à verificação.
+The application was built with **Python** using **Selenium** for browser automation and **openpyxl** for Excel file manipulation. It automatically accesses an internal system, analyzes account information, and updates a control spreadsheet in real time.
 
-Atualização de Status:
+The goal of this automation is to significantly improve productivity, reduce analysis time, and ensure consistent validation based on predefined business rules.
 
-Após a análise, o software atualiza a planilha com o status de cada conta.
-Caso a conta atenda a todos os critérios estabelecidos, o sistema a marca automaticamente como Data Reviewed (DR), indicando que está pronta para ser deletada.
-Relatórios e Registro:
-O resultado da análise é registrado diretamente na planilha gmails.xlsx, permitindo rastreabilidade e auditoria.
-Interface Simples:
-Um executável (.exe) foi criado para facilitar o uso do software, permitindo que qualquer membro da equipe o utilize sem necessidade de configurar o ambiente Python.
-Além disso, um manual foi elaborado para orientar os analistas sobre como operar o software de forma eficiente.
+---
 
-Impacto e Benefícios
+## Features
+
+-  Reads account information from an Excel spreadsheet (`gmails.xlsx`)
+-  Automates account analysis through browser interaction
+-  Inspects HTML elements to validate predefined conditions
+-  Automatically updates the account status after validation
+-  Generates a complete audit trail directly in the spreadsheet
+-  Includes an executable (`.exe`) for non-technical users
+-  User guide available for analysts
+
+---
+
+## Productivity Impact
+
+### Manual Process
+
+- Approximately **10–15 minutes** per account.
+
+### Automated Process
+
+- Approximately **1 minute** per account.
+- Up to **480 accounts** processed by one analyst during an 8-hour workday.
+- Around **3,000 accounts** processed daily by a team of 10 analysts.
+
+### Benefits
+
+- Significant reduction in processing time.
+- Improved accuracy through automated validation.
+- Reduced human error.
+- Standardized account verification.
+- Increased operational efficiency.
+
+---
+
+## 🛠 Technologies
+
+### Language
+
+- Python
+
+### Libraries
+
+- Selenium
+- openpyxl
+
+---
+
+##  Project Structure
+
+.
+├── gmails.xlsx          # Spreadsheet containing the accounts to analyze
+├── config.json          # User configuration
+├── main.py              # Main application
+├── requirements.txt
+└── README.md
 
 
-Produtividade:
+---
 
-A automação consegue analisar 1 conta por minuto, enquanto o processo manual levaria entre 10 e 15 minutos por conta.
-Com a automação, cada analista pode processar até 480 contas por dia em um turno de 8 horas.
-Considerando uma equipe de 10 analistas, é possível analisar cerca de 3 mil contas por dia, mesmo considerando eventuais erros.
-Economia de Tempo:
-O processo manual levaria meses para ser concluído, enquanto a automação permite finalizar o trabalho em apenas alguns dias.
-Precisão:
+## ⚙️ How It Works
 
-A lógica programada reduz significativamente a chance de erros humanos, garantindo que os critérios sejam aplicados de forma consistente.
+1. Reads all email addresses from **gmails.xlsx**.
+2. Logs into the internal system.
+3. Opens each account.
+4. Extracts and analyzes the required information.
+5. Validates predefined business rules.
+6. Updates the spreadsheet with the corresponding status.
 
-Tecnologias Utilizadas
+If an account satisfies all validation criteria, it is automatically marked as:
 
+```
+Data Reviewed (DR)
+```
 
-Linguagem: Python
-Bibliotecas Principais:
+indicating that the account is ready for deletion.
 
-Selenium: Para interação com o sistema e análise de elementos HTML.
-openpyxl: Para manipulação da planilha de controle gmails.xlsx.
+---
 
-Como Usar (Somente funciona no ambiente interno da empresa)
+## ▶️ Usage
 
-1 - Certifique-se de que a planilha gmails.xlsx esteja localizada no diretório C:\Analisar.
-2- Coloque seu email no arquivo config.json
-3- Execute o arquivo .exe (disponível no repositório).
-4- O software realizará automaticamente a análise das contas e atualizará o status na planilha.
+> **Note:** This application was designed to run only within the company's internal environment.
 
-Observações
+1. Place **gmails.xlsx** inside:
 
-Este software foi projetado para funcionar somente no ambiente da empresa, mas pode ser ajustado para atender a novos critérios ou alterações em outros ambientes. Ele é uma solução prática para grandes volumes de dados que exigem análise criteriosa e rápida.
+```
+C:\Analyze
+```
 
-Autor: Ivan Bragante
-Linguagem: Python
-Bibliotecas: Selenium, openpyxl
+2. Add your email address to:
+
+```
+config.json
+```
+
+3. Run the executable (`.exe`) included in this repository.
+
+4. The application will automatically analyze all accounts and update their status in the spreadsheet.
+
+---
+
+## 📈 Results
+
+The automation transformed a process that previously required months of manual work into a task that can be completed in just a few days.
+
+By automating repetitive operations, analysts can focus on more valuable activities instead of manually reviewing thousands of accounts.
+
+---
+
+## Disclaimer
+
+This project was originally designed for an internal corporate environment.
+
+Sensitive business logic and proprietary information have been omitted from this public version.
+
+The architecture can easily be adapted to support different workflows and validation rules.
+
+---
+
+## Author
+
+**Ivan Bragante**
+
+- Python
+- Selenium
+- openpyxl
