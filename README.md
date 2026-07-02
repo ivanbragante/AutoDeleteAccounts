@@ -1,6 +1,6 @@
-# Google Account Analysis Automation
+#  Google Account Analysis Automation
 
-## Overview
+##  Overview
 
 This project was developed to automate the analysis of Google accounts, replacing a manual process that was time-consuming and prone to human error.
 
@@ -44,7 +44,7 @@ The goal of this automation is to significantly improve productivity, reduce ana
 
 ---
 
-## 🛠 Technologies
+## Technologies
 
 ### Language
 
@@ -57,19 +57,20 @@ The goal of this automation is to significantly improve productivity, reduce ana
 
 ---
 
-##  Project Structure
+## Project Structure
 
+```text
 .
 ├── gmails.xlsx          # Spreadsheet containing the accounts to analyze
 ├── config.json          # User configuration
 ├── main.py              # Main application
 ├── requirements.txt
 └── README.md
-
+```
 
 ---
 
-## ⚙️ How It Works
+## How It Works
 
 1. Reads all email addresses from **gmails.xlsx**.
 2. Logs into the internal system.
@@ -88,19 +89,19 @@ indicating that the account is ready for deletion.
 
 ---
 
-## ▶️ Usage
+## Usage
 
 > **Note:** This application was designed to run only within the company's internal environment.
 
 1. Place **gmails.xlsx** inside:
 
-```
+```text
 C:\Analyze
 ```
 
 2. Add your email address to:
 
-```
+```text
 config.json
 ```
 
@@ -110,7 +111,7 @@ config.json
 
 ---
 
-## 📈 Results
+## Results
 
 The automation transformed a process that previously required months of manual work into a task that can be completed in just a few days.
 
